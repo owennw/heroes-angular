@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
+import AppRoutingModule from './app-routing.module'
 
 import { App } from './app.component'
 
@@ -18,21 +19,7 @@ import HeroService from './heroes/hero.service'
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full',
-      },
-      {
-        path: 'dashboard',
-        component: Dashboard,
-      },
-      {
-        path: 'heroes',
-        component: Heroes,
-      },
-    ]),
+    AppRoutingModule,
   ],
   declarations: [
     App,
