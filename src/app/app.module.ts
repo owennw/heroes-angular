@@ -20,6 +20,7 @@ import HeroSearch from './heroes/search/hero-search.component'
 import Dashboard from './dashboard/dashboard.component'
 
 import HeroService from './heroes/hero.service'
+import HeroSearchService from './heroes/search/hero-search.service'
 
 @NgModule({
   imports: [
@@ -39,10 +40,11 @@ import HeroService from './heroes/hero.service'
   ],
   providers: [
     HeroService,
+    HeroSearchService,
   ],
   bootstrap: [
     App,
   ],
 })
 
-export class AppModule { }
+export default class AppModule { }

@@ -1,4 +1,4 @@
-module.exports = context => ({
+module.exports = {
   parser: 'sugarss',
   map: false,
   plugins: [
@@ -6,4 +6,4 @@ module.exports = context => ({
     require('precss')({ /* ...options */ }),
     require('autoprefixer')({ /* ...options */ })
   ]
-})
+}
