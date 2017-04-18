@@ -36,6 +36,17 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: helpers.root('src', 'app'),
+        use: [
+          'css-to-string-loader',
+          'style-loader',
+          'css-loader?importLoaders=1',
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /\.css$/,
+        include: helpers.root('src', 'app'),
         use: [
           'css-to-string-loader',
           'css-loader?importLoaders=1',

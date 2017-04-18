@@ -11,6 +11,7 @@ import Hero from './hero'
 @Component({
   selector: 'hero',
   templateUrl: './hero-detail.component.html',
+  styleUrls: [ './hero-detail.component.css' ],
 })
 
 export default class HeroDetailComponent implements OnInit {
