@@ -14,7 +14,8 @@ import { App } from './app.component'
 import Heading from './heading.component'
 
 import Heroes from './heroes/heroes.component'
-import HeroDetail from './heroes/hero-detail.component'
+import HeroDetail from './heroes/detail/hero-detail.component'
+import HeroSearch from './heroes/search/hero-search.component'
 
 import Dashboard from './dashboard/dashboard.component'
 
@@ -34,6 +35,7 @@ import HeroService from './heroes/hero.service'
     Heroes,
     Dashboard,
     HeroDetail,
+    HeroSearch,
   ],
   providers: [
     HeroService,

@@ -1,0 +1,23 @@
+:root
+  --search-result-background-color: white
+  --search-result-hover-color: #eee
+  --search-result-hover-background-color: #607D8B
+  --search-result-border: 1px solid gray
+
+.search-result
+  border-bottom: var(--search-result-border)
+  border-left: var(--search-result-border)
+  border-right: var(--search-result-border)
+  width: 195px
+  height: 16px
+  padding: 5px
+  background-color: var(--search-result-background-color)
+  cursor: pointer
+
+  &:hover
+    color: var(--search-result-hover-color)
+    background-color: var(--search-result-hover-background-color)
+
+#search-box
+  width: 200px
+  height: 20px
