@@ -1,16 +1,34 @@
 import { Injectable } from '@angular/core'
+import { Http } from '@angular/http'
+
+// import 'rxjs/add/operator/toPromise'
 
 import Hero from './hero'
-import HEROES from './heroes'
 
 @Injectable()
 export default class HeroService {
-  getHeroes(): Promise<Hero[]> {
-    return Promise.resolve(HEROES)
+  private heroesUrl = 'api/heroes'
+
+  constructor(private http: Http) {
   }
 
-  getHero(id: number) {
-    return this.getHeroes()
-      .then(heroes => heroes.find(hero => hero.id === id))
+  getHeroes(): Promise<Hero[]> {
+    return this.http.get(this.heroesUrl)
+      .toPromise()
+      .then(response => response.json().data as Hero[])
+      .catch(this.handleError)
+  }
+
+  getHero(id: number): Promise<Hero> {
+    const url = `${this.heroesUrl}/${id}`
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data as Hero)
+      .catch(this.handleError)
+  }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error)
+    return Promise.reject(error.message || error)
   }
 }
